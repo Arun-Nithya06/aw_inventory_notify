@@ -1,6 +1,12 @@
 import { Entity, Column, OneToMany } from 'typeorm';
 import { BaseTable } from './base.entity';
 import { ShopCustomer } from './customer.entity';
+import { ManyToOne } from 'typeorm';
+
+export abstract class ShopRelation {
+  @ManyToOne(() => Shop, { nullable: false })
+  shop: Shop;
+}
 
 @Entity('shops')
 export class Shop extends BaseTable {

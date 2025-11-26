@@ -29,6 +29,6 @@ export class ShopCustomer extends BaseTable {
   @ManyToOne(() => Customer, (customer) => customer.shopCustomers)
   customer: Customer;
 
-  @Column({ unique: false, nullable: true })
+  @Column({ nullable: true })
   shopifyCustomerId: string;
 }
